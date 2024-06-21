@@ -1,29 +1,33 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
+console.log("test");
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-
+  
   //This works outside of this but not in this code
   let employeesArray = [];
 
   let addEmployee = true;
   while (addEmployee) {
+    
     let firstName = prompt("Please enter employee's first name.");
     if (!firstName) {
+      
       alert("First name is required.");
       continue; // Restart loop if first name is not provided
     }
 
     let lastName = prompt("Please enter employee's last name.");
     if (!lastName) {
+     
       alert("Last name is required.");
       continue; // Restart loop if last name is not provided
     }
 
     let salary = parseInt(prompt("Please enter employee's salary."));
     if (isNaN(salary)) {
+     
       alert("Salary must be a valid number.");
       continue; // Restart loop if salary is not a valid number
     }
@@ -32,10 +36,11 @@ const collectEmployees = function() {
     employeesArray.push(employee);
 
     addEmployee = confirm("Would you like to add another Employee?");
+    console.log(addEmployee);
   }
 
-  return employeesArray;
-}
+   return employeesArray;
+ }
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
@@ -71,7 +76,7 @@ const getRandomEmployee = function(employeesArray) {
 const displayEmployees = function(employeesArray) {
   // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
-
+  
   // Clear the employee table
   employeeTable.innerHTML = '';
 
